@@ -1,0 +1,104 @@
+package main
+
+import (
+	"fmt"
+	"math/cmplx"
+)
+
+// This is a single-line comment
+
+/*
+This is a
+multi-line comment
+*/
+
+// Keywords
+const (
+	pi      = 3.14
+	radius  = 5
+	message = "Hello, Go!"
+    multiline_comment = `HELLO,
+    YOUR COMPUTER HAS
+    A VIRUS^^`
+)
+
+func main() {
+	// Variables and Operators
+	var (
+		diameter = 2 * radius
+		area     = pi * radius * radius
+	)
+
+	// Print statements
+	fmt.Println("Keywords and Variables:")
+	fmt.Printf("   Radius: %d\n", radius)
+	fmt.Printf("   Diameter: %d\n", diameter)
+	fmt.Printf("   Area: %.2f\n", area)
+	fmt.Printf("   Message: %s\n", message)
+
+	// Control Flow
+	fmt.Println("\nControl Flow:")
+	if diameter > 10 {
+		fmt.Println("   Large Circle")
+	} else {
+		fmt.Println("   Small Circle")
+	}
+
+	// Loops
+	fmt.Println("\nLoops:")
+	for i := 0; i < 3; i++ {
+		fmt.Printf("   Loop iteration: %d\n", i)
+	}
+
+	// Arrays and Slices
+	fmt.Println("\nArrays and Slices:")
+	numbers := [3]int{1, 2, 3}
+	fmt.Println("   Array:", numbers)
+	fmt.Println("   Slice:", numbers[1:3])
+
+	// Functions
+	fmt.Println("\nFunctions:")
+	greet()
+
+	// Defer
+	fmt.Println("\nDefer:")
+	defer fmt.Println("   Deferred statement")
+	fmt.Println("   Non-deferred statement")
+
+	// Pointer
+	fmt.Println("\nPointer:")
+	x := 10
+	y := &x
+	fmt.Printf("   x = %d, y = %p\n", x, y)
+
+	// Structs
+	fmt.Println("\nStructs:")
+	person := Person{name: "John", age: 30}
+	fmt.Printf("   Name: %s, Age: %d\n", person.name, person.age)
+
+	// Rune processing
+	fmt.Println("\nRune Processing:")
+	runes := 'a'
+	fmt.Printf("   Rune: %c, Unicode: %U\n", runes, runes)
+
+	// Complex numbers
+	fmt.Println("\nComplex Numbers:")
+	complexNum := 3 + 4i
+	fmt.Printf("   Complex Number: %v\n", complexNum)
+
+	// Hexadecimal numbers
+	fmt.Println("\nHexadecimal Numbers:")
+	hexNumber := 0x1a
+	fmt.Printf("   Hexadecimal Number: %#x\n", hexNumber)
+}
+
+// Function
+func greet() {
+	fmt.Println("   Greetings from the greet function!")
+}
+
+// Struct
+type Person struct {
+	name string
+	age  int
+}
